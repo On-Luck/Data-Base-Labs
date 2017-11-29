@@ -31,7 +31,7 @@ namespace BD_Lab3
             this.view_FAKTableAdapter.Fill(this.bD_Lab2DataSet.View_FAK);
             this.план_приемаTableAdapter.Fill(this.bD_Lab2DataSet.План_приема);
             this.специальностиTableAdapter.Fill(this.bD_Lab2DataSet.Специальности);
-            //выводим название специальности в поле, дабы было прозе добавлять данные
+            //выводим название специальности в поле, дабы было проще добавлять данные
             специальностиBindingSource.MoveFirst();
             специальностиBindingSource.Find("ID_специальности", NomSpec_Combobox.SelectedValue.ToString());    
         }
