@@ -40,8 +40,7 @@ namespace BD_Lab3
 
             FormIzmSpravSpec fr4 = new FormIzmSpravSpec(this, Convert.ToInt32(IDSpec), NomerSpec, NazvSpec, NazvKaf);
             fr4.ShowDialog();
-
-            // сюда вписать команды на удаление
+            
             this.специальностиTableAdapter.Fill(this.bD_Lab2DataSet.Специальности);
 
         }
