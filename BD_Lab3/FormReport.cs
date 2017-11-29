@@ -18,8 +18,7 @@ namespace BD_Lab3
             InitializeComponent();
         }
 
-       public  BindingSource bspp,bss; //просто не хочу подключать сюда датасет и биндинг сурсы с него, 
-        //поэтому просто передаю биндинги из основной формы сюда
+       public  BindingSource bspp,bss; //передаю биндинги из основной формы сюда
        double[,] masd;
        double vsmaxkon = 0, vspodza = 0, vskolspec = 0; // максимальный конкрус, всего подан заявлений, всего специальностей
        int lastpos;
@@ -150,32 +149,3 @@ namespace BD_Lab3
         }
     }
 }
-/*while (bspp.Count != n)
-              {
-                  if (((DataRowView)bspp.Current).Row["Форма_обучения"].ToString() != comboBoxFrmOb.Text)
-                  {
-                      bspp.MoveNext();
-                      n++;
-                      continue;
-                  }//Сразу переходим на следующий круг, ибо нефиг хуйней страдать, да кучу кода разводить
-
-                  view_FAKBindingSource.MoveFirst();
-                  for (int i = 0; i < view_FAKBindingSource.Count - 1; i++)
-                  {
-                      //какое-то сложное условие, но мне похуй
-                      if (((DataRowView)bspp.Current).Row["Факультет"].ToString() == ((DataRowView)view_FAKBindingSource.Current).Row["FAK"].ToString())
-                      {
-                          masd[i, 0]++; //кол-во специальностей увеличиваем на 1
-                          masd[i, 1] += Convert.ToInt32(((DataRowView)bspp.Current).Row["Подано_заявлений"].ToString());//Суммируем кол-во поданых заявлений
-                          y = (Convert.ToDouble(((DataRowView)bspp.Current).Row["Подано_заявлений"].ToString()) / Convert.ToDouble(((DataRowView)bspp.Current).Row["Кол_мест"].ToString()));
-                          if (y > masd[i, 2])
-                              masd[i, 2] = y;
-                          break; //прерываем цикл
-                      }
-                      else
-                          view_FAKBindingSource.MoveNext();
-                  }
-                  bspp.MoveNext();
-                  n++;
-              }
-              */
