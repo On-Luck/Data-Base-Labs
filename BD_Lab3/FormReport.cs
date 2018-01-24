@@ -46,7 +46,6 @@ namespace BD_Lab3
 
         private void buttonCreateOtch_Click(object sender, EventArgs e)
         {
-            //потому что не хочу писать кучу ифов, да и решил вспомнить как работает try-catch
             try
             {
                 //проверяем вводимые данные
