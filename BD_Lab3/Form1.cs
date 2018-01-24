@@ -18,7 +18,7 @@ namespace BD_Lab3
         }
 
         string filtrstring;
-        int chec_box_checked = 0;
+        int check_box_checked = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "bD_Lab2DataSet.Специальности". При необходимости она может быть перемещена или удалена.
@@ -107,7 +107,7 @@ namespace BD_Lab3
         {
             планприемаBindingSource.RemoveFilter();
             filtrstring = "";
-            chec_box_checked = 0;
+            check_box_checked = 0;
 
             foreach (Control gb in tableLayoutPanel3.Controls)
             {
@@ -121,16 +121,16 @@ namespace BD_Lab3
                             {
                                 case "TochniiCheck":
                                     filtrstring += "Номер_специальности = '" + FiltrNomer_spec.Text + "'";
-                                    chec_box_checked++;
+                                    check_box_checked++;
                                     break;
                                 case "PriblCheck":
-                                    if (chec_box_checked != 0)
+                                    if (check_box_checked != 0)
                                         filtrstring += "AND " + String.Format("Convert(Кол_мест, 'System.String') LIKE '{0}%' ", FiltrKol_mest.Text);
                                     else filtrstring += String.Format("Convert(Кол_мест, 'System.String') LIKE '{0}%' ", FiltrKol_mest.Text);
-                                    chec_box_checked++;
+                                    check_box_checked++;
                                     break;
                                 case "IntervCheck":
-                                    if (chec_box_checked != 0)
+                                    if (check_box_checked != 0)
                                     {
                                         filtrstring += " AND ";
                                     }
@@ -143,7 +143,7 @@ namespace BD_Lab3
                                     else if (Filtr_do.Text != "")
                                         filtrstring += filtrstring += String.Format("Подано_заявлений <= {0}", Filtr_do.Text);
                                     break;
-                                    /*if (chec_box_checked !=0 && Filtr_Ot.Text !=""  && Filtr_do.Text != "")
+                                    /*if (check_box_checked !=0 && Filtr_Ot.Text !=""  && Filtr_do.Text != "")
                                         filtrstring += "AND " + String.Format("Подано_заявлений >= '{0}' and Подано_заявлений <='{1}'", Filtr_Ot.Text, Filtr_do.Text);
                                     else if (Filtr_Ot.Text != "" && Filtr_do.Text != "") 
                                         filtrstring += String.Format("Подано_заявлений >= '{0}' and Подано_заявлений <='{1}'", Filtr_Ot.Text, Filtr_do.Text);
